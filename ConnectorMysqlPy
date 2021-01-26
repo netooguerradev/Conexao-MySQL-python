@@ -1,0 +1,14 @@
+import pymysql.connector
+
+conexao = pymysql.connector.connect(
+  host = '', 
+  user = '',
+  database = '',
+  password = ''
+ )
+ 
+ if conexao.is_connected():
+  DBinfo = conexao.get_server_info()
+  print(f'O MySQL está conectado ao servidor e a versão é {DBinfo})
+  
+  
