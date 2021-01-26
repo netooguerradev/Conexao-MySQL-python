@@ -11,4 +11,29 @@ conexao = pymysql.connector.connect(
   DBinfo = conexao.get_server_info()
   print(f'O MySQL está conectado ao servidor e a versão é {DBinfo})
   
-  
+   ''' 
+ LEIA O README ANTES DE USAR ESSE CÓDIGO
+ 1-  Primeiro importamos o conector para dentro do código com o comando
+- import pymysql.connector -
+Feita a conexão entre o MySQL e o python, agora vamos realizar a conexão com o nosso servidor.
+
+2 - Para fazer a conexão, vamos criar uma variável e informar os dados do servidor, para isso chamamos e a conexão
+do MySql com o Python que nós importamos e damos nele um comando connect(), para realizar a conexão,sendo o seguinte código:
+- conexao = pymysql.connector.connect() -
+Em seguida, dentro do parênteses,vamos informar os parâmetros da nossa conexão,sendo o host, se for o caso de estar conectado num
+servidor local, o host é o 'localhost', se estiver em outra máquina, o host é o endereço de IP da máquina. O user, que por padrão,vem no 
+servidor como 'root', a não ser que você tenha alterado.O parâmetro Database é o nome do banco de dados que você vai trabalhar, logo ele terá
+que ser criado anteriormente pelo  MySQL Workbench ou direto no PHPmyAdmin, e o password, por padrão vem sem,logo,se não tiver alterado é só deixa-lo em branco.
+
+3- Após feita a conexão com o servidor, agora vamos garantir se a conexão está sendo realizada com sucesso. Para isso vamos gerar o comando
+- if conexao.is_connected():
+  DBinfo = conexao.get_server_info()
+  print(f'O MySQL está conectado ao servidor e a versão é {DBinfo}) - 
+ .is_connected é um método que diz que "está conectado",como se fosse, conexao.is_connected() == a variável conexão está conectada '
+ logo, se a conexão estiver pegando normal, faça:
+ após isso,criamos uma variável chamada DBinfo, que ela chama a conexão e coloca nela um comando chamado - .get_server_info() - que serve
+ para dizer a versão do banco de dados utilizado, ou seja, a minha DBinfo retornará a versão do banco de dados da minha conexão. Com
+ isso damos um print chamando a variável DBinfo, e ela nos dirá a versão do banco de dados.
+ 
+ Conexão python ao mysql feita com sucesso.
+ '''
